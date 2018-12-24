@@ -109,6 +109,7 @@ def process_frame(img, frame, face_cascade):
         identity = find_identity(frame, x1, y1, x2, y2)
 
         if identity is not None:
+            img = cv2.putText(frame, identity, (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), lineType=cv2.LINE_AA)
             identities.append(identity)
 
     if identities != []:
